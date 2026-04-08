@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from './hooks';
+import { useAppSelector } from './hooks';
 import { fetchCats } from './services/catsApi';
 import { CatGrid } from './components/CatGrid';
 import { Tabs } from './components/Tabs';
@@ -7,7 +7,7 @@ import type { CatImage } from './types/cat';
 import './App.css';
 
 function App() {
-  const dispatch = useAppDispatch();
+  
   const favorites = useAppSelector(state => state.favorites.items);
   const [allCats, setAllCats] = useState<CatImage[]>([]);
   const [page, setPage] = useState(0);
