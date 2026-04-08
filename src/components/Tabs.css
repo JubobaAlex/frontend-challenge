@@ -1,0 +1,36 @@
+.tabs {
+  display: flex;
+  gap: 0;
+  height: 64px;
+}
+
+.tabs__btn {
+  height: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tabs__btn:first-child {
+  width: 120px;
+}
+
+.tabs__btn:last-child {
+  width: 173px;
+}
+
+.tabs__btn--active {
+  background-color: #1e88e5;
+  color: white;
+}
+
+.tabs__btn:not(.tabs__btn--active) {
+  background-color: #2196f3;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.tabs__btn:not(.tabs__btn--active):hover {
+  color: white;
+}
