@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { CatImage } from '../types/cat';
-import { useAppDispatch, useAppSelector } from '../hooks'
+import { useAppDispatch, useAppSelector } from '../hooks';
 import { addFavorite, removeFavorite } from '../features/favorites/favoritesSlice';
 import './CatCard.css';
 
@@ -16,9 +16,10 @@ export const CatCard = ({ cat }: CatCardProps) => {
   );
 
   const getHeartIcon = () => {
-    if (isFavorite) return '/heart-icons/heart-filled.png';
-    if (isHeartHovered) return '/heart-icons/heart-hover.png';
-    return '/heart-icons/heart-outline.png';
+    const basePath = import.meta.env.BASE_URL || '/frontend-challenge';
+    if (isFavorite) return `${basePath}heart-icons/heart-filled.png`;
+    if (isHeartHovered) return `${basePath}heart-icons/heart-hover.png`;
+    return `${basePath}heart-icons/heart-outline.png`;
   };
 
   const handleClick = () => {
